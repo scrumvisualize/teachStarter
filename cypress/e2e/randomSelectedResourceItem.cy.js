@@ -8,6 +8,7 @@ let resourcesByType = new ResourcesByType;
 let resourcesPageDetails = new ResourcesPageDetails;
 let utility = new Utility;
 
+
 beforeEach(() => {
     utility.getBaseUrl();
 });
@@ -15,12 +16,12 @@ beforeEach(() => {
 describe('End to End test for Teach Starter website', ()=>{
     it('Verify the Download button and title of the randomly selected resource item from the list', ()=>{
         utility.getBaseUrl();
-        topMenuResources.getResourcesMenu().click({force:true});
-        topMenuResources.getTeachingResources();
-        resourcesByType.getResourcesByType();
+        topMenuResources.getResourcesMenu("Resources ").click({force:true});
+        topMenuResources.getTeachingResources("Teaching Resources");
+        resourcesByType.getResourcesByType("Free");
         resourcesByType.getResourceTypeHeader().should('contain', "Free");
         utility.waitForPageLoad();
-        resourcesByType.getRandomResourceFromList();
+        resourcesByType.getRandomResourceFromList("contentHeader");
         resourcesByType.clickOnTheResourceItem()
         utility.waitForPageLoad();
         resourcesByType.getResourceHeaderText().invoke('text').then((text)=>{

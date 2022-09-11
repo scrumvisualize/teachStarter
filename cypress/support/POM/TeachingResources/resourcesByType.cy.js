@@ -6,19 +6,19 @@ let randNumber = 0;
 
 export class ResourcesByType {
 
-    getResourcesByType(){
-        return cy.get('ul > li > a').contains("Free").click({force:true});
+    getResourcesByType(text){
+        return cy.get('ul > li > a').contains(text).click({force:true});
     }
 
     getResourceTypeHeader(){
         return cy.get('#main h1');
     }
 
-    getRandomResourceFromList() {
+    getRandomResourceFromList(keyName) {
        randNumber = utility.getRandomNumber();   
        return cy.get('section > div').eq(2).find('div').find('ul').find('li').eq(randNumber).then(($li)=>{
               cy.wrap($li).find('div').find('a').find('h4').invoke('text').then((text)=>{
-            utility.setItemToBrowserLocalStorage("contentHeader", text);
+            utility.setItemToBrowserLocalStorage(keyName, text);
          });
     });
     }

@@ -1,11 +1,11 @@
 
 export class TopMenuResources {
 
-    getResourcesMenu(){
-        return cy.get('a[href="/au/teaching-resources/"]').contains("Resources ");
+    getResourcesMenu(menu){
+        return cy.get('a[href="/au/teaching-resources/"]').contains(menu);
     }
-    
-    getTeachingResources(){
-        return cy.get('h4').contains("Teaching Resources").click({force:true})
+
+    getTeachingResources(text){
+        return cy.get('h4').contains(text).click({force:true})
     }
 }
