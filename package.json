@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "cypress": "^10.7.0"
+  },
+  "name": "teachstarter",
+  "version": "1.0.0",
+  "description": "cypress test",
+  "main": "cypress.config.js",
+  "devDependencies": {},
+  "scripts": {
+    "cy-test-open": "npx cypress open",
+    "cy-test-run": "npx cypress run GLOB='cypress/e2e/**/*.cy.js' --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scrumvisualize/teachStarter.git"
+  },
+  "author": "vinod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scrumvisualize/teachStarter/issues"
+  },
+  "homepage": "https://github.com/scrumvisualize/teachStarter#readme"
+}
